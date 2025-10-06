@@ -12,7 +12,7 @@ class CoordinatesModel {
   });
 
   static List<CoordinatesModel> fromJson(json) {
-    List<Map<String, dynamic>> results = json['results'] ?? [];
+    List<dynamic> results = json['results'] ?? [];
     List<CoordinatesModel> coordinates = [];
     results.isNotEmpty
         ? coordinates = List.generate(
@@ -22,6 +22,8 @@ class CoordinatesModel {
                 name: results[index]['name'],
                 latitude: results[index]['latitude'],
                 longitude: results[index]['longitude'],
+                country:
+                    results[index]['country'] ?? 'Country name not provided.',
               );
             },
           )

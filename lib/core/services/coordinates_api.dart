@@ -3,7 +3,9 @@ import 'package:dio/dio.dart';
 import '../../data/models/coordinates_model.dart';
 
 class CoordinatesApi {
-  Future<List<CoordinatesModel>> fetchCoordinates(String searchQuery) async {
+  static Future<List<CoordinatesModel>> fetchCoordinates(
+    String searchQuery,
+  ) async {
     Dio dio = Dio();
 
     try {
