@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:weather_watch/core/bindings/search_bar_controller_binding.dart';
 
 import 'core/routes/routes.dart';
 
@@ -14,6 +15,7 @@ class WeatherWatch extends StatelessWidget {
       child: GetMaterialApp(
         initialRoute: '/search',
         getPages: routes,
+        initialBinding: SearchBarControllerBinding(),
       ),
     );
   }

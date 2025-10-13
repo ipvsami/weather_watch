@@ -28,7 +28,7 @@ class SearchBarController extends GetxController {
           isLoading.value = false;
         }
       },
-      time: Duration(milliseconds: 1),
+      time: Duration(milliseconds: 300),
     );
   }
 

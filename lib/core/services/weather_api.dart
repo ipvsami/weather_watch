@@ -17,9 +17,10 @@ class WeatherApi {
             'weather_code',
             'temperature_2m_min',
             'temperature_2m_max',
-            'sunrise',
             'uv_index_max',
             'rain_sum',
+            'apparent_temperature_max',
+            'apparent_temperature_min',
           ],
           'current': [
             'weather_code',
