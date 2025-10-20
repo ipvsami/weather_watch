@@ -14,6 +14,7 @@ import '../../../data/informations/dates.dart';
 import '../../../data/informations/rain_sum.dart';
 import '../../../data/informations/temperatures.dart';
 import '../../../data/informations/uv_indexes.dart';
+import '../../../data/models/coordinates_model.dart';
 import '../../widgets/custom_information_card.dart';
 import '../../widgets/custom_progress_indicator.dart';
 import '../controller/weather_controller.dart';
@@ -24,6 +25,7 @@ class WeatherPage extends GetView<WeatherController> {
 
   @override
   Widget build(BuildContext context) {
+    GetStorage box = GetStorage();
     return Scaffold(
       body: Stack(
         children: [
@@ -670,7 +672,11 @@ class WeatherPage extends GetView<WeatherController> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.defaultDialog(
+                          title: box.read('bookmarks').toString(),
+                        );
+                      },
                       icon: Icon(
                         Icons.list,
                         color: ConstantColors.appBarText,
@@ -792,7 +798,13 @@ class WeatherPage extends GetView<WeatherController> {
                                                 child: MaterialButton(
                                                   color: ConstantColors.uvBlue
                                                       .withAlpha(30),
-                                                  onPressed: () {},
+                                                  onPressed: () {
+                                                    controller.addToBookmarks(
+                                                      CoordinatesModel.toJson(
+                                                        controller.coordinates!,
+                                                      ),
+                                                    );
+                                                  },
                                                   shape: RoundedRectangleBorder(
                                                     side: BorderSide(
                                                       color: ConstantColors

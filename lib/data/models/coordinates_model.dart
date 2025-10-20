@@ -30,4 +30,13 @@ class CoordinatesModel {
         : coordinates = [];
     return coordinates;
   }
+
+  static toJson(CoordinatesModel coordinates) {
+    return {
+      'name': coordinates.name,
+      'latitude': coordinates.latitude,
+      'longitude': coordinates.longitude,
+      'country': coordinates.country,
+    };
+  }
 }
